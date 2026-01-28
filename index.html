@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MiniShop - Vanilla JS</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">MS</div>
+      <div>
+        <div class="title">MiniShop</div>
+        <div class="subtitle">Product Catalog & Cart • Vanilla JS</div>
+      </div>
+    </div>
+
+    <button id="btnOpenCart" class="btn primary">
+      Cart (<span id="cartCount">0</span>)
+    </button>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="controls">
+        <input id="q" type="search" placeholder="Search products..." />
+        <select id="category">
+          <option value="ALL">All categories</option>
+        </select>
+        <select id="sort">
+          <option value="default">Sort: Default</option>
+          <option value="price_asc">Price: Low → High</option>
+          <option value="price_desc">Price: High → Low</option>
+          <option value="name_asc">Name: A → Z</option>
+        </select>
+        <button id="btnSeed" class="btn">Seed Demo</button>
+        <button id="btnClear" class="btn danger">Clear Storage</button>
+      </div>
+
+      <div id="grid" class="grid"></div>
+      <div id="empty" class="empty">No products found.</div>
+    </section>
+  </main>
+
+  <!-- Product Modal -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <div class="modal-head">
+        <h2 id="mName">Product</h2>
+        <button id="btnCloseModal" class="btn btn-ghost">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="m-img" id="mImg"></div>
+        <div class="m-info">
+          <div class="price" id="mPrice"></div>
+          <div class="muted" id="mCategory"></div>
+          <p id="mDesc" class="desc"></p>
+
+          <div class="row">
+            <input id="mQty" type="number" min="1" value="1"/>
+            <button id="btnAddToCart" class="btn primary">Add to cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div id="drawer" class="drawer hidden">
+    <div class="drawer-content">
+      <div class="drawer-head">
+        <h2>Your Cart</h2>
+        <button id="btnCloseCart" class="btn btn-ghost">✕</button>
+      </div>
+
+      <div id="cartList" class="cart-list"></div>
+
+      <div class="drawer-foot">
+        <div class="total">
+          <span>Total</span>
+          <strong id="cartTotal">0</strong>
+        </div>
+        <button id="btnCheckout" class="btn primary">Checkout (demo)</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
