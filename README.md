@@ -65,10 +65,7 @@ minishop-vanilla-js/
 - Separate business logic from UI rendering
 - Work with browser LocalStorage for data persistence
 
----
 
-## 🔹 Live Demo
-https://YOUR_USERNAME.github.io/minishop-vanilla-js/
 
 ---
 
